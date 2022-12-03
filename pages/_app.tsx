@@ -1,4 +1,4 @@
-import '../styles/main.scss';
+import '../styles/main.css';
 import type { AppProps } from 'next/app';
 import React from 'react';
 import { NextPage } from 'next';
