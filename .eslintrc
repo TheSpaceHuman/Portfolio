@@ -19,6 +19,7 @@
     "no-var": "error",
     "semi": "off",
     "quotes": ["error", "single"],
+    "comma-dangle": ["error", "always-multiline"],
     // Typescript eslint
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/member-ordering": "error",
@@ -43,18 +44,8 @@
           "caseInsensitive": true
         },
         "groups": [
-          [
-            "builtin",
-            "external",
-            "internal"
-          ],
-          [
-            "parent",
-            "sibling",
-            "index",
-            "object",
-            "type"
-          ]
+          ["builtin", "external", "internal"],
+          ["parent", "sibling", "index", "object", "type"]
         ]
       }
     ]
