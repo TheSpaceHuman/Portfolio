@@ -3,11 +3,11 @@ const prodPlugins = ['autoprefixer', 'cssnano', 'node-css-mqpacker', 'postcss-ne
 const devPlugins = ['node-css-mqpacker', 'postcss-nested', 'postcss-import'];
 
 if (process.env.NODE_ENV === 'production') {
-    plugins.push(...prodPlugins);
+  plugins.push(...prodPlugins);
 } else {
-    plugins.push(...devPlugins)
+  plugins.push(...devPlugins);
 }
 
 module.exports = {
-    plugins,
-}
+  plugins,
+};
