@@ -7,21 +7,20 @@ import { withLayout } from '../layouts/Layout';
 import { IAppProps } from '../utils/types';
 import { NavigationNode } from './api/navigations';
 
-const Index: NextPage<IAppProps> = () => {
+export const Blog: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Portfolio - Home</title>
+        <title>Portfolio - Blog</title>
       </Head>
       <section>
-        <h1>Home</h1>
+        <h1>Blog</h1>
       </section>
     </>
   );
 };
 
-export default withLayout(Index);
-// TODO Optimized code (clear duplicates)
+export default withLayout(Blog);
 export const getStaticProps: GetStaticProps<IAppProps> = async () => {
   const res = await axios.get<NavigationNode[]>(`${process.env.NEXT_PUBLICK_DOMAIN}/navigations`);
   return {

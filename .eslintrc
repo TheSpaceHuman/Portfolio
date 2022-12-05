@@ -1,8 +1,8 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"],
+  "extends": ["next/core-web-vitals", "prettier", "plugin:react-hooks/recommended"],
   "ignorePatterns": ["next.config.js"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "import"],
+  "plugins": ["@typescript-eslint", "import", "react-hooks"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],

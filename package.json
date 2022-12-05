@@ -13,13 +13,14 @@
     "lint": "next lint",
     "prettier": "prettier --check \"**/*.json\"",
     "stylelint": "stylelint \"**/*.css\"",
-    "reformat": "next lint --fix && prettier --write \"**/*.json\" && stylelint --fix \"**/*.css\""
+    "reformat": "next lint --fix && prettier --write \"**/*.{ts,tsx,json}\" && stylelint --fix \"**/*.css\""
   },
   "dependencies": {
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "antd": "^5.0.2",
+    "axios": "^1.2.0",
     "classnames": "^2.3.2",
     "next": "13.0.5",
     "react": "18.2.0",
@@ -35,6 +36,7 @@
     "eslint-config-next": "^13.0.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "node-css-mqpacker": "^9.0.0",
     "postcss-import": "^15.0.1",
     "postcss-nested": "^6.0.0",
