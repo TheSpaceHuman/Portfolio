@@ -9,7 +9,7 @@ import { AppContextProvider, IAppContext } from '../contexts/app.context';
 import styles from './Layout.module.css';
 import { LayoutProps } from './Layout.props';
 
-export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
+export const Layout: FunctionComponent<LayoutProps> = ({ children, fullScreen }) => {
   const { darkAlgorithm } = theme;
   const customTheme: ThemeConfig = {
     token: {
@@ -25,19 +25,22 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
         <Head>
           <title>Portfolio</title>
         </Head>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        {!fullScreen && <Header />}
+        <main className={styles.layout__main}>{children}</main>
+        {!fullScreen && <Footer />}
       </ConfigProvider>
     </div>
   );
 };
 
-export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(
+  Component: FunctionComponent<T>,
+  fullScreen: boolean = false,
+) => {
   return function withLayoutComponent(props: T): JSX.Element {
     return (
       <AppContextProvider menu={props.menu}>
-        <Layout>
+        <Layout fullScreen={fullScreen}>
           <Component {...props} />
         </Layout>
       </AppContextProvider>
