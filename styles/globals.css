@@ -15,7 +15,3 @@ a {
 * {
 	box-sizing: border-box;
 }
-
-header .ant-menu {
-	justify-content: flex-end;
-}
