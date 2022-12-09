@@ -11,9 +11,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --check \"**/*.json\"",
+    "prettier": "prettier --check \"**/*.{ts,tsx,json}\"",
     "stylelint": "stylelint \"**/*.css\"",
-    "reformat": "next lint --fix && prettier --write \"**/*.{ts,tsx,json}\" && stylelint --fix \"**/*.css\""
+    "reformat": "next lint --fix && prettier --write \"**/*.{ts,tsx,json}\" && stylelint --fix \"**/*.css\"",
+    "precommit": "npm run lint && npm run prettier && npm run stylelint"
   },
   "dependencies": {
     "@types/node": "18.11.9",
@@ -37,6 +38,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.2",
     "node-css-mqpacker": "^9.0.0",
     "postcss-import": "^15.0.1",
     "postcss-nested": "^6.0.0",
