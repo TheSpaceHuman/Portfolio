@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface ActiveLinkProps {
+export interface IActiveLinkProps {
   children: ReactNode;
   href: string;
 }

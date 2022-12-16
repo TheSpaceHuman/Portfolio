@@ -6,6 +6,7 @@ import React, { FunctionComponent } from 'react';
 import { Footer } from '../components/Modules/Footer/Footer';
 import { Header } from '../components/Modules/Header/Header';
 import { AppContextProvider, IAppContext } from '../contexts/app.context';
+import { nodes } from '../helpers/navigations';
 import styles from './Layout.module.css';
 import { LayoutProps } from './Layout.props';
 
@@ -39,7 +40,7 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(
 ) => {
   return function withLayoutComponent(props: T): JSX.Element {
     return (
-      <AppContextProvider menu={props.menu}>
+      <AppContextProvider menu={nodes}>
         <Layout fullScreen={fullScreen}>
           <Component {...props} />
         </Layout>

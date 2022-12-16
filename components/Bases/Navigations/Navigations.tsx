@@ -1,43 +1,23 @@
-import { AppstoreOutlined, BookOutlined, BuildOutlined, HomeOutlined, ProfileOutlined } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
 import { ItemType } from 'antd/es/menu/hooks/useItems';
 import { NextRouter } from 'next/dist/shared/lib/router/router';
 import { useRouter } from 'next/router';
-import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 
+import { INavigationNode } from '../../../helpers/navigations';
 import styles from './Navigations.module.css';
-import { NavigationsProps } from './Navigations.props';
+import { INavigationsProps } from './Navigations.props';
 
-export const Navigations: FunctionComponent<NavigationsProps> = ({ nodes }) => {
+export const Navigations: FunctionComponent<INavigationsProps> = ({ nodes }) => {
   const [activeItems, setActiveItems] = useState<string[]>([]);
-  const [menu, setMenu] = useState<ItemType[]>([]);
   const router: NextRouter = useRouter();
 
   useEffect(() => {
     setActiveItems([router.route]);
   }, [router.route]);
 
-  useEffect(() => {
-    if (nodes) {
-      setMenu(nodes.map((n) => ({ label: n.title, key: n.url, icon: getIcon(n.title) })));
-    }
-  }, [nodes]);
-
-  const getIcon: (title: string) => ReactNode = (icon) => {
-    switch (icon) {
-      case 'Home':
-        return <HomeOutlined />;
-      case 'Blog':
-        return <ProfileOutlined />;
-      case 'Work Projects':
-        return <AppstoreOutlined />;
-      case 'Pet Projects':
-        return <BuildOutlined />;
-      case 'Resources':
-        return <BookOutlined />;
-      default:
-        return false;
-    }
+  const transformNodes: (nodes: INavigationNode[]) => ItemType[] = (nodes) => {
+    return nodes.map(({ title, url, icon }) => ({ label: title, key: url, icon }));
   };
 
   const selectedItem: MenuProps['onClick'] = ({ key }) => {
@@ -50,7 +30,7 @@ export const Navigations: FunctionComponent<NavigationsProps> = ({ nodes }) => {
         className={styles.navigations__menu}
         mode="horizontal"
         selectedKeys={activeItems}
-        items={menu}
+        items={nodes ? transformNodes(nodes) : []}
         onClick={selectedItem}></Menu>
     </nav>
   );

@@ -1,5 +1,5 @@
-import { NavigationNode } from '../../../pages/api/navigations';
+import { INavigationNode } from '../../../helpers/navigations';
 
-export interface NavigationsProps {
-  nodes?: NavigationNode[];
+export interface INavigationsProps {
+  nodes: INavigationNode[];
 }

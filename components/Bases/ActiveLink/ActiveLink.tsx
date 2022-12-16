@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { FunctionComponent, MouseEventHandler } from 'react';
 
-import { ActiveLinkProps } from './ActiveLink.props';
+import { IActiveLinkProps } from './ActiveLink.props';
 
-const ActiveLink: FunctionComponent<ActiveLinkProps> = ({ children, href }) => {
+const ActiveLink: FunctionComponent<IActiveLinkProps> = ({ children, href }) => {
   const router = useRouter();
 
   const handleClick: MouseEventHandler<HTMLAnchorElement> = (e) => {

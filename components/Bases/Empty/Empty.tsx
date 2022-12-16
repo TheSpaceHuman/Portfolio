@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useRef } from 'react';
 
 import styles from './Empty.module.css';
-import { EmptyProps } from './Empty.props';
-export const Empty: FunctionComponent<EmptyProps> = ({ title, subtitle, description }) => {
+import { IEmptyProps } from './Empty.props';
+export const Empty: FunctionComponent<IEmptyProps> = ({ title, subtitle, description }) => {
   const router = useRouter();
   const visorRef = useRef<HTMLCanvasElement>(null);
 
