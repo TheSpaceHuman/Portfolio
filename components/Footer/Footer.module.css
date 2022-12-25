@@ -2,5 +2,6 @@
 	padding: 12px;
 	background-color: var(--color-dark);
 	color: var(--color-primary);
+	grid-area: footer;
 	text-align: center;
 }

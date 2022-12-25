@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React, { FunctionComponent } from 'react';
 
-import { Empty } from '../components/Bases/Empty/Empty';
+import { Empty } from '../components/Empty/Empty';
 import { withLayout } from '../layouts/Layout';
 
 const WorkProjects: FunctionComponent = () => {
@@ -15,4 +15,4 @@ const WorkProjects: FunctionComponent = () => {
   );
 };
 
-export default withLayout(WorkProjects, true);
+export default withLayout(WorkProjects);

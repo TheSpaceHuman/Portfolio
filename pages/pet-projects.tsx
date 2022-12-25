@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React, { FunctionComponent } from 'react';
 
-import { Empty } from '../components/Bases/Empty/Empty';
+import { Empty } from '../components/Empty/Empty';
 import { withLayout } from '../layouts/Layout';
 
 const PetProjects: FunctionComponent = () => {
@@ -15,4 +15,4 @@ const PetProjects: FunctionComponent = () => {
   );
 };
 
-export default withLayout(PetProjects, true);
+export default withLayout(PetProjects);

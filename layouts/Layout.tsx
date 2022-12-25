@@ -3,14 +3,14 @@ import { ThemeConfig } from 'antd/es/config-provider/context';
 import Head from 'next/head';
 import React, { FunctionComponent } from 'react';
 
-import { Footer } from '../components/Modules/Footer/Footer';
-import { Header } from '../components/Modules/Header/Header';
+import { Footer } from '../components/Footer/Footer';
+import { Header } from '../components/Header/Header';
 import { AppContextProvider, IAppContext } from '../contexts/app.context';
 import { nodes } from '../helpers/navigations';
 import styles from './Layout.module.css';
-import { LayoutProps } from './Layout.props';
+import { ILayoutProps } from './Layout.props';
 
-export const Layout: FunctionComponent<LayoutProps> = ({ children, fullScreen }) => {
+export const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
   const { darkAlgorithm } = theme;
   const customTheme: ThemeConfig = {
     token: {
@@ -26,22 +26,19 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children, fullScreen })
         <Head>
           <title>Portfolio</title>
         </Head>
-        {!fullScreen && <Header />}
+        <Header />
         <main className={styles.layout__main}>{children}</main>
-        {!fullScreen && <Footer />}
+        <Footer />
       </ConfigProvider>
     </div>
   );
 };
 
-export const withLayout = <T extends Record<string, unknown> & IAppContext>(
-  Component: FunctionComponent<T>,
-  fullScreen: boolean = false,
-) => {
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
   return function withLayoutComponent(props: T): JSX.Element {
     return (
       <AppContextProvider menu={nodes}>
-        <Layout fullScreen={fullScreen}>
+        <Layout>
           <Component {...props} />
         </Layout>
       </AppContextProvider>

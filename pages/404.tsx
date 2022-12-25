@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-import { Empty } from '../components/Bases/Empty/Empty';
+import { Empty } from '../components/Empty/Empty';
 import { withLayout } from '../layouts/Layout';
 
 const Page404: FunctionComponent = () => {
@@ -13,4 +13,4 @@ const Page404: FunctionComponent = () => {
   );
 };
 
-export default withLayout(Page404, true);
+export default withLayout(Page404);

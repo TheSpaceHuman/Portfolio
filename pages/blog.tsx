@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
 
-import { Empty } from '../components/Bases/Empty/Empty';
+import { Empty } from '../components/Empty/Empty';
 import { withLayout } from '../layouts/Layout';
 
 export const Blog: NextPage = () => {
@@ -16,4 +16,4 @@ export const Blog: NextPage = () => {
   );
 };
 
-export default withLayout(Blog, true);
+export default withLayout(Blog);
