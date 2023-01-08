@@ -1,6 +1,5 @@
 import { createContext, PropsWithChildren, useState } from 'react';
-
-import { INavigationNode } from '../helpers/navigations';
+import { INavigationNode } from '~/helpers/navigations';
 
 export interface IAppContext {
   menu: INavigationNode[];

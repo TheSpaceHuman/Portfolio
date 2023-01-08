@@ -1,8 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
-
-import { withLayout } from '../layouts/Layout';
+import { withLayout } from '~/layouts/Layout';
 
 const Index: NextPage = () => {
   return (

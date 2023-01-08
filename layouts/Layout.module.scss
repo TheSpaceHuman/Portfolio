@@ -1,3 +1,5 @@
+@import 'styles/breakpoint';
+
 .layout {
 	display: grid;
 	max-width: 100vw;
@@ -5,7 +7,7 @@
 	grid-template:
 		"header header header" auto
 		". main ." 1fr
-		"footer footer footer" auto /  auto  minmax(var(--breakpoint-xsm), var(--breakpoint-xl)) auto;
+		"footer footer footer" auto /  auto  minmax($breakpoint-xsm, $breakpoint-xl) auto;
 
 	&__main {
 		grid-area: main;

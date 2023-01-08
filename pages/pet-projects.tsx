@@ -1,8 +1,7 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React, { FunctionComponent } from 'react';
-
-import { Empty } from '../components/Empty/Empty';
-import { withLayout } from '../layouts/Layout';
+import { withLayout } from '~/layouts/Layout';
 
 const PetProjects: FunctionComponent = () => {
   return (
@@ -10,9 +9,12 @@ const PetProjects: FunctionComponent = () => {
       <Head>
         <title>Portfolio - Pet Projects</title>
       </Head>
-      <Empty subtitle={'Development continues'} />
     </>
   );
 };
-
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    notFound: true,
+  };
+};
 export default withLayout(PetProjects);

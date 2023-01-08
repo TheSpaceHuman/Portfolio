@@ -1,0 +1,13 @@
+@import 'styles/breakpoint';
+
+.navigations {
+	display: flex;
+	justify-content: flex-end;
+	background-color: var(--color-secondary);
+
+	&__menu {
+		@media (max-width: $breakpoint-md) {
+			width: 230px;
+		}
+	}
+}

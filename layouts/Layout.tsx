@@ -2,12 +2,12 @@ import { ConfigProvider, theme } from 'antd';
 import { ThemeConfig } from 'antd/es/config-provider/context';
 import Head from 'next/head';
 import React, { FunctionComponent } from 'react';
+import { Footer } from '~/components/Footer/Footer';
+import { Header } from '~/components/Header/Header';
+import { AppContextProvider, IAppContext } from '~/contexts/app.context';
+import { nodes } from '~/helpers/navigations';
 
-import { Footer } from '../components/Footer/Footer';
-import { Header } from '../components/Header/Header';
-import { AppContextProvider, IAppContext } from '../contexts/app.context';
-import { nodes } from '../helpers/navigations';
-import styles from './Layout.module.css';
+import styles from './Layout.module.scss';
 import { ILayoutProps } from './Layout.props';
 
 export const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {

@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { FunctionComponent, useContext } from 'react';
+import { AppContext } from '~/contexts/app.context';
 
-import { AppContext } from '../../contexts/app.context';
 import { Navigations } from '../Navigations/Navigations';
 import styles from './Header.module.css';
 import { IHeaderProps } from './Header.props';

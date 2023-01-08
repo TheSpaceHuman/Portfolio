@@ -1,9 +1,7 @@
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
-
-import { Empty } from '../components/Empty/Empty';
-import { withLayout } from '../layouts/Layout';
+import { withLayout } from '~/layouts/Layout';
 
 export const Blog: NextPage = () => {
   return (
@@ -11,9 +9,12 @@ export const Blog: NextPage = () => {
       <Head>
         <title>Portfolio - Blog</title>
       </Head>
-      <Empty subtitle={'Development continues'} />
     </>
   );
 };
-
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    notFound: true,
+  };
+};
 export default withLayout(Blog);

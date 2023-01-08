@@ -4,10 +4,11 @@ import cn from 'classnames';
 import { NextRouter } from 'next/dist/shared/lib/router/router';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
+import { INavigationNode } from '~/helpers/navigations';
 
-import { INavigationNode } from '../../helpers/navigations';
-import styles from './Navigations.module.css';
+import styles from './Navigations.module.scss';
 import { INavigationsProps } from './Navigations.props';
+
 
 export const Navigations: FunctionComponent<INavigationsProps> = ({ nodes }) => {
   const [activeItems, setActiveItems] = useState<string[]>([]);

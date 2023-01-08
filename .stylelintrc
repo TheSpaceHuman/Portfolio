@@ -4,10 +4,16 @@
     "stylelint-config-idiomatic-order"
   ],
   "customSyntax": "postcss-scss",
-  "plugins": ["stylelint-order"],
+  "plugins": ["stylelint-order", "stylelint-selector-bem-pattern"],
   "rules": {
     "indentation": "tab",
-    "color-hex-case": "upper",
-    "selector-class-pattern": ["^[a-zA-Z][a-z0-9_-]+$", { "resolveNestedSelectors": true }]
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    }
   }
 }

@@ -45,7 +45,9 @@
           }
         ],
         // Import
-        "import/no-unresolved": "error",
+        "import/no-unresolved": [2, {
+          "ignore": ["~+"]
+        }],
         "import/order": [
           "error",
           {
