@@ -1,7 +1,8 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-idiomatic-order"
+    "stylelint-config-idiomatic-order",
+    "stylelint-config-standard-scss"
   ],
   "customSyntax": "postcss-scss",
   "plugins": ["stylelint-order", "stylelint-selector-bem-pattern"],

@@ -1,13 +1,34 @@
-@import 'styles/breakpoint';
+@import "../../styles/vars";
 
 .navigations {
-	display: flex;
-	justify-content: flex-end;
-	background-color: var(--color-secondary);
+	background-color: rgb(10 25 47 / 85%);
+	box-shadow: 0 10px 30px -10px var(--shadow);
 
-	&__menu {
-		@media (max-width: $breakpoint-md) {
-			width: 230px;
+	&__list {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		gap: 12px;
+		list-style: none;
+	}
+
+	&__item {
+		padding: 16px 18px;
+		color: var(--white);
+		font-size: $fz-md;
+		font-weight: 300;
+		text-transform: uppercase;
+
+		&::before {
+			margin-right: 5px;
+			color: var(--primary);
+			content: "0" attr(data-index) ".";
+			font-size: $fz-sm;
+			font-weight: 300;
+		}
+
+		&--active {
+			color: var(--primary);
 		}
 	}
 }

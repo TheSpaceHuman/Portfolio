@@ -1,5 +1,3 @@
-import { ConfigProvider, theme } from 'antd';
-import { ThemeConfig } from 'antd/es/config-provider/context';
 import Head from 'next/head';
 import React, { FunctionComponent } from 'react';
 import { Footer } from '~/components/Footer/Footer';
@@ -11,25 +9,14 @@ import styles from './Layout.module.scss';
 import { ILayoutProps } from './Layout.props';
 
 export const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
-  const { darkAlgorithm } = theme;
-  const customTheme: ThemeConfig = {
-    token: {
-      borderRadius: 0,
-      colorPrimary: '#ffec3d',
-    },
-    algorithm: [darkAlgorithm],
-  };
-
   return (
     <div className={styles.layout}>
-      <ConfigProvider theme={customTheme}>
-        <Head>
-          <title>Portfolio</title>
-        </Head>
-        <Header />
-        <main className={styles.layout__main}>{children}</main>
-        <Footer />
-      </ConfigProvider>
+      <Head>
+        <title>Portfolio</title>
+      </Head>
+      <Header />
+      <main className={styles.layout__main}>{children}</main>
+      <Footer />
     </div>
   );
 };

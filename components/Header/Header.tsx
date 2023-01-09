@@ -3,7 +3,7 @@ import { FunctionComponent, useContext } from 'react';
 import { AppContext } from '~/contexts/app.context';
 
 import { Navigations } from '../Navigations/Navigations';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import { IHeaderProps } from './Header.props';
 
 export const Header: FunctionComponent<IHeaderProps> = ({ className }) => {
