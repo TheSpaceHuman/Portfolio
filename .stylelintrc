@@ -8,6 +8,12 @@
   "plugins": ["stylelint-order", "stylelint-selector-bem-pattern"],
   "rules": {
     "indentation": "tab",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
     "plugin/selector-bem-pattern": {
       "componentName": "[A-Z]+",
       "componentSelectors": {
