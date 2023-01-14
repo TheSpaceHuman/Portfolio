@@ -23,8 +23,12 @@ export const Navigations: FunctionComponent<INavigationsProps> = ({ nodes }) => 
   }, [router.route]);
 
   useEffect(() => {
-    addEventListener('resize', () => setOpen(false), { once: true });
-  });
+    const closeHandler: () => void = () => setOpen(false);
+    addEventListener('resize', closeHandler);
+    return () => {
+      removeEventListener('resize', closeHandler);
+    };
+  }, []);
 
   return (
     <nav className={styles.navigations}>

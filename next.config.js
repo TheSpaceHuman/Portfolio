@@ -1,7 +1,7 @@
 const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   compiler: {
     styledComponents: true,
@@ -13,5 +13,5 @@ module.exports = {
   webpack: (config) => {
     config.resolve.alias['~'] = path.resolve(__dirname);
     return config;
-  }
+  },
 };
