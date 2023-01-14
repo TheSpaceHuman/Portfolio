@@ -14,6 +14,7 @@
         "ignorePseudoClasses": ["global"]
       }
     ],
+    "keyframes-name-pattern": "[a-zA-Z]+",
     "plugin/selector-bem-pattern": {
       "componentName": "[A-Z]+",
       "componentSelectors": {

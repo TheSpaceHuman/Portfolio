@@ -2,9 +2,15 @@
 
 .navigations {
 	display: flex;
+	align-items: center;
 	justify-content: flex-end;
+	padding-left: 18px;
 	background-color: rgb(10 25 47 / 85%);
 	box-shadow: 0 10px 30px -10px var(--shadow);
+
+	&__logo {
+		margin-right: auto;
+	}
 
 	&__hamburger {
 		position: relative;

@@ -4,6 +4,7 @@ import { NextRouter } from 'next/dist/shared/lib/router/router';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, KeyboardEvent, useEffect, useState } from 'react';
+import { Logo } from '~/components/Logo/Logo';
 
 import styles from './Navigations.module.scss';
 import { INavigationsProps } from './Navigations.props';
@@ -32,6 +33,10 @@ export const Navigations: FunctionComponent<INavigationsProps> = ({ nodes }) => 
 
   return (
     <nav className={styles.navigations}>
+      <Logo
+        link="/"
+        className={styles.navigations__logo}
+      />
       <button
         className={styles.navigations__hamburger}
         onKeyDown={accessibilityHandler}>
