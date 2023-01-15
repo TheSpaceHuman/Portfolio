@@ -4,10 +4,18 @@ import { INavigationNode } from '~/helpers/navigations';
 export interface IAppContext {
   menu: INavigationNode[];
   setMenu?: (newMenu: INavigationNode[]) => void;
+  loading: boolean;
+  setLoading?: (visible: boolean) => void;
 }
-export const AppContext = createContext<IAppContext>({ menu: [] });
+export const AppContext = createContext<IAppContext>({ menu: [], loading: false });
 
-export const AppContextProvider = ({ children, menu }: PropsWithChildren<IAppContext>) => {
+export const AppContextProvider = ({ children, menu, loading }: PropsWithChildren<IAppContext>) => {
   const [menuState, setMenuState] = useState<INavigationNode[]>(menu);
-  return <AppContext.Provider value={{ menu: menuState, setMenu: setMenuState }}>{children}</AppContext.Provider>;
+  const [loadingState, setLoadingState] = useState<boolean>(loading);
+  return (
+    <AppContext.Provider
+      value={{ menu: menuState, setMenu: setMenuState, loading: loadingState, setLoading: setLoadingState }}>
+      {children}
+    </AppContext.Provider>
+  );
 };

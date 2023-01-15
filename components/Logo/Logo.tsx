@@ -10,7 +10,7 @@ export const Logo: FC<ILogoProps> = ({ link, alt = 'Page logotype', className })
   return (
     <Link
       href={link}
-      className={cn(styles.logo, className, 'animate-heart-beat')}>
+      className={cn(styles.logo, className, 'animate-pulse-interactive')}>
       <Image
         src="/images/logo.png"
         className={styles.logo__img}
