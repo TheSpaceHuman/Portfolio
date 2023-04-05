@@ -1,7 +1,18 @@
 .logo {
 	display: inline-block;
 
-	&__img {
+	&__figure {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		figcaption {
+			font-family: 'Rubik Pixels', cursive;
+			font-size: 20px;
+		}
+	}
+
+	&__icon {
 		display: block;
+		filter: invert(99%) sepia(95%) saturate(948%) hue-rotate(84deg) brightness(98%) contrast(106%);
 	}
 }

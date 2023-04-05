@@ -10,10 +10,10 @@ export const Spinner: FC<ISpinnerProps> = ({ className }) => {
     <div className={cn(styles.spinner, className)}>
       <Image
         className={'animate-pulse'}
-        src={'/images/spinner.png'}
+        src={'/icons/noun-rocket-5490244.svg'}
         alt={'Spinner'}
-        width={64}
-        height={64}
+        width={120}
+        height={120}
       />
     </div>
   );

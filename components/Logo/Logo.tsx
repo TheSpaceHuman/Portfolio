@@ -11,13 +11,10 @@ export const Logo: FC<ILogoProps> = ({ link, alt = 'Page logotype', className })
     <Link
       href={link}
       className={cn(styles.logo, className, 'animate-pulse-interactive')}>
-      <Image
-        src="/images/logo.png"
-        className={styles.logo__img}
-        alt={alt}
-        width={42}
-        height={42}
-      />
+        <figure className={styles.logo__figure}>
+            <Image src={'/icons/noun-space-780626.svg'} className={styles.logo__icon} width={90} height={75} alt={alt} />
+            <figcaption>TheSpaceHuman</figcaption>
+        </figure>
     </Link>
   );
 };

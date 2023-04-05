@@ -9,4 +9,8 @@
 	align-items: center;
 	justify-content: center;
 	background-color: var(--secondary);
+	img {
+		display: block;
+		filter: invert(99%) sepia(95%) saturate(948%) hue-rotate(84deg) brightness(98%) contrast(106%);
+	}
 }
